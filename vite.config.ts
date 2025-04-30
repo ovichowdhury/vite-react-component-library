@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { glob } from "glob";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     react(),
     libInjectCss(),
     dts({ include: ["lib"], entryRoot: "lib", outDir: "dist" }),
+    tailwindcss(),
   ],
   build: {
     lib: {
